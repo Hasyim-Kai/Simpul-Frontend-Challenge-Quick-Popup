@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import QuickBtn from '../presentation/components/features/quick/button/QuickBtn'
+import QuickBtn from '../presentation/components/features/quick/button/QuickBtnMenu'
 import s from '../styles/home.module.scss'
 
 export default function Home() {

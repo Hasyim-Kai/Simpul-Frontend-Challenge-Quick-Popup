@@ -1,0 +1,68 @@
+@use "../../../../../styles/export/mixin" as m;
+@use "../../../../../styles/export/var" as v;
+
+.quick_btn {
+  z-index: 1;
+  @include m.floatBtn(v.$quick-btn, 2rem);
+}
+
+.quick_btn_hide {
+  z-index: 0;
+  @include m.floatBtn(v.$float-btn-grey, 3rem);
+}
+
+.btn_text {
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  bottom: 4.5rem;
+  margin-inline: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+
+
+
+// INBOX BUTTON
+.inbox_btn {
+  @include m.floatBtn($right: 7rem);
+}
+
+.inbox_btn_hide {
+  z-index: 0;
+  opacity: 0;
+  @include m.floatBtn($right: 2rem);
+}
+
+.inbox_btn_active {
+  @include m.floatBtn(v.$inbox-btn, 2rem);
+}
+
+.inbox_btn_inactive {
+  @include m.floatBtn($right: 8rem);
+}
+
+
+
+
+// TASK BUTTON
+.task_btn {
+  @include m.floatBtn($right: 12rem);
+}
+
+.task_btn_hide {
+  z-index: 0;
+  opacity: 0;
+  @include m.floatBtn($right: 2rem);
+}
+
+.task_btn_active {
+  @include m.floatBtn(v.$task-btn, 2rem);
+}
+
+.task_btn_inactive {
+  @include m.floatBtn($right: 8rem);
+}
