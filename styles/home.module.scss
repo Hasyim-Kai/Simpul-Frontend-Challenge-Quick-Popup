@@ -1,0 +1,46 @@
+@use "./export/mixin" as m;
+@use "./export/var" as v;
+
+.layout {
+  display: flex;
+}
+
+.sidenav {
+  width: 285px;
+  min-height: 100vh;
+  background-color: v.$dark-bg-primary;
+}
+
+.nav {
+  height: 58px;
+  width: 100%;
+  background-color: v.$dark-bg-secondary;
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+}
+
+.search_wrapper {
+  margin-inline: 1.8rem;
+}
+
+.content {
+  min-height: 100vh;
+  flex-grow: 1;
+  flex-shrink: 1;
+  border-left: 1px solid v.$stroke-color;
+  background-color: v.$dark-bg-primary;
+}
+
+.hide {
+  // transition: all ease-in 0.2s;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-7px);
+}
+
+.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0px);
+}

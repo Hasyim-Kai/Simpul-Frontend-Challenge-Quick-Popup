@@ -1,0 +1,19 @@
+@use "var" as v;
+
+@mixin transition {
+    transition: all ease-in-out 0.3s;
+}
+
+@mixin floatBtn($bg-color: v.$float-btn-white, $right: 2rem, $size: 60px) {
+    position: absolute;
+    bottom: 2rem;
+    right: $right;
+    width: $size;
+    height: $size;
+    padding: 1rem;
+    border-radius: 50%; // circle
+    background: $bg-color;
+    cursor: pointer;
+    border: 0;
+    @include transition();
+}
