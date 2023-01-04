@@ -30,13 +30,7 @@
 }
 
 .newtask_btn {
-  color: white;
-  font-weight: bold;
-  font-size: 14px;
-  border: 0;
-  border-radius: 4px;
-  background-color: v.$task-newtask-btn;
-  padding: 0.5rem 1rem;
+  @include m.blue_btn;
 }
 
 
@@ -75,6 +69,7 @@
 
 .dl_text {
   color: #EB5757;
+  min-width: 4rem;
 }
 
 .date_text {
