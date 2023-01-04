@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import QuickBtn from '../presentation/components/features/quick/button/QuickBtnMenu'
+import Popup from '../presentation/components/features/quick/popup/Popup'
 import s from '../styles/home.module.scss'
 
 export default function Home() {
@@ -21,7 +22,7 @@ export default function Home() {
           </div>
         </nav>
 
-
+        <Popup />
         <QuickBtn />
       </section>
     </main>
