@@ -18,7 +18,7 @@
     @include transition();
 }
 
-@mixin popup {
+@mixin popup($padding: 1rem 1.5rem) {
     color: black;
     position: absolute;
     z-index: 1;
@@ -28,7 +28,7 @@
     height: v.$popup-height;
     border-radius: v.$popup-border-radius;
     border: 1px solid v.$popup-border;
-    padding: 1rem 1.5rem;
+    padding: $padding;
     background-color: white;
     overflow-y: auto;
 }
@@ -37,12 +37,32 @@
     opacity: 1;
     visibility: visible;
     @include transition();
-    @include popup;
 }
 
 @mixin popup_hide {
     visibility: hidden;
     opacity: 0;
     @include transition();
-    @include popup;
+}
+
+@mixin blue_btn {
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    border: 0;
+    border-radius: 4px;
+    background-color: v.$task-newtask-btn;
+    padding: 0.5rem 1rem;
+}
+
+@mixin chat_bubble($bg-color: v.$purple-chat) {
+    color: v.$dark-bg-primary;
+    padding: 0.5rem;
+    font-size: 0.8em;
+    font-weight: 300;
+    background-color: $bg-color;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
