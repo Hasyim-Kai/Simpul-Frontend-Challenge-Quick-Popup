@@ -1,8 +1,21 @@
 import Image from 'next/image'
 import { useState } from 'react'
+import { openInboxDetailPopup } from '../../../../../../app/GlobalSlice'
+import { useAppDispatch } from '../../../../../../app/store'
 import s from '../../styles/inbox-popup.module.scss'
 
-export default function ContactItem() {
+interface Props {
+  data: {
+    name: string,
+    date: string,
+    latestSender: string,
+    latestTxt: string
+  }
+}
+
+export default function ContactItem({ data }: Props) {
+  const dispatch = useAppDispatch()
+  function openInboxDetail() { dispatch(openInboxDetailPopup()) }
   const [isChecked, setIsChecked] = useState<boolean>(false)
   function handleCheckbox(e: any) { setIsChecked(!isChecked) }
   const [date, setDate] = useState<string | null>(null)
@@ -12,17 +25,17 @@ export default function ContactItem() {
   The options and the documents within this document were totally a
   guaranteed for a success!`)
 
-  return <div className={s.contact_item}>
+  return <div className={s.contact_item} onClick={openInboxDetail}>
     <div className={``}>
       <Image alt='contact' src='./icons/contact.svg' width={50} height={50} />
     </div>
 
     <div className={s.chat_desc}>
-      <p>109220-Naturalization</p>
-      <p>Cameron Phillips :</p>
-      <p>Inside auto layout!</p>
+      <p>{data.name}</p>
+      <p>{data.latestSender}</p>
+      <p>{data.latestTxt}</p>
     </div>
 
-    <p className={s.date_text}>12/06/2021</p>
+    <p className={s.date_text}>{data.date}</p>
   </div>
 }

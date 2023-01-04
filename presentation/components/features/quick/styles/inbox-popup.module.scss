@@ -5,6 +5,10 @@
   @include m.popup;
 }
 
+.chat_detail_popup {
+  @include m.popup(0);
+}
+
 .popup_show {
   @include m.popup_show;
 }
@@ -51,8 +55,116 @@
   gap: 1rem;
   padding: 22px 0;
   border-top: 1px solid v.$popup-border;
+  cursor: pointer;
 
   &:first-child {
     border-top: 0;
+  }
+}
+
+
+
+
+
+// CHAT
+$chat-padding: 1rem 1.5rem;
+
+.head>div>p:first-child {
+  font-size: 1.4em;
+  padding-bottom: 0.2rem;
+  font-weight: 500;
+  color: v.$blue-txt;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.6em;
+  font-weight: 200;
+  border-bottom: 1px solid v.$popup-border;
+  padding: $chat-padding;
+}
+
+.chats_container {
+  padding: $chat-padding;
+}
+
+.chat_input {
+  padding: $chat-padding;
+  display: flex;
+  gap: 1rem;
+
+  input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #828282;
+    border-radius: v.$popup-border-radius;
+  }
+
+  button {
+    @include m.blue_btn;
+  }
+}
+
+.close_btn {
+  margin-left: auto;
+}
+
+.chat_item_mine {
+  padding: 0.3rem 0;
+
+  h6 {
+    padding: 0.3rem 0;
+    text-align: right;
+    color: v.$purple-chat-sender;
+  }
+
+  >div {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: end;
+  }
+}
+
+.my_chat_bubble {
+  @include m.chat_bubble;
+}
+
+.her_chat_item {
+  padding: 0.3rem 0;
+
+  h6 {
+    padding: 0.3rem 0;
+    text-align: left;
+    color: v.$orange-chat-sender;
+  }
+
+  >div {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: row-reverse;
+    justify-content: left;
+  }
+}
+
+.her_chat_bubble {
+  @include m.chat_bubble(v.$orange-chat);
+}
+
+
+
+
+.date_divider {
+  margin-top: 1rem;
+  font-size: 0.8em;
+  font-weight: 300;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  hr {
+    width: 10rem;
+    height: 1px;
   }
 }
