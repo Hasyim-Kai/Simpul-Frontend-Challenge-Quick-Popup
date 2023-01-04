@@ -1,0 +1,109 @@
+@use "../../../../../styles/export/mixin" as m;
+@use "../../../../../styles/export/var" as v;
+// @include m.floatBtn(v.$float-btn-grey, 3rem);
+
+.popup {
+  @include m.popup;
+}
+
+.popup_show {
+  @include m.popup_show;
+}
+
+.popup_hide {
+  @include m.popup_hide;
+}
+
+.nav_btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.task_type {
+  font-size: 14px;
+  font-weight: lighter;
+  margin-left: 2rem;
+  border: 1px solid v.$popup-border;
+  border-radius: 4px;
+  background-color: white;
+  padding: 0.5rem;
+}
+
+.newtask_btn {
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  border: 0;
+  border-radius: 4px;
+  background-color: v.$task-newtask-btn;
+  padding: 0.5rem 1rem;
+}
+
+
+
+
+
+
+.task_item {
+  border-top: 1px solid v.$popup-border;
+  padding: 22px 0;
+  font-size: 12px;
+
+  &:first-child {
+    border-top: 0;
+  }
+}
+
+.task_title_checked {
+  text-decoration: line-through;
+  color: rgb(63, 63, 63);
+}
+
+.task_item label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.task_item label>div {
+  margin-left: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dl_text {
+  color: #EB5757;
+}
+
+.date_text {
+  font-weight: 300;
+}
+
+
+
+
+.task_item>div {
+  margin-left: 2rem;
+  margin-top: 0.8rem;
+}
+
+.datepicker {
+  margin-left: 1rem;
+  font-size: 0.8em;
+  color: rgb(63, 63, 63);
+  border: 1px solid v.$popup-border;
+  border-radius: 4px;
+  background-color: white;
+  padding: 0.5rem;
+}
+
+.desc_txt {
+  display: flex;
+  font-weight: 300;
+}
+
+.desc_txt>p {
+  margin-left: 1rem;
+}

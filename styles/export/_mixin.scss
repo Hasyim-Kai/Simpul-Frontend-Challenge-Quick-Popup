@@ -17,3 +17,32 @@
     border: 0;
     @include transition();
 }
+
+@mixin popup {
+    color: black;
+    position: absolute;
+    z-index: 1;
+    bottom: 6.5rem;
+    right: 2rem;
+    width: v.$popup-width;
+    height: v.$popup-height;
+    border-radius: v.$popup-border-radius;
+    border: 1px solid v.$popup-border;
+    padding: 1rem 1.5rem;
+    background-color: white;
+    overflow-y: auto;
+}
+
+@mixin popup_show {
+    opacity: 1;
+    visibility: visible;
+    @include transition();
+    @include popup;
+}
+
+@mixin popup_hide {
+    visibility: hidden;
+    opacity: 0;
+    @include transition();
+    @include popup;
+}

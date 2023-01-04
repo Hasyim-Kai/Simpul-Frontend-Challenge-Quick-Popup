@@ -7,6 +7,7 @@ body {
 body {
   width: 100vw;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 a {
@@ -18,4 +19,9 @@ a {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
 }
